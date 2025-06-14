@@ -1,6 +1,7 @@
 # basic-command
 linux Assignment
 Here, the command I coded is indicated as "----------" on the right side.
+For a clearer version, see the code mode.
 
 #MODULE 1
 
