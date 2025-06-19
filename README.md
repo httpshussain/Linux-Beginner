@@ -1,24 +1,24 @@
 # basic-command
 linux Assignment
-Here, the command I coded is indicated as "----------" on the right side.
+
 For a clearer version, see the code mode.
 
 #MODULE 1
 
-labex:project/ $ mkdir test_dir ----------
+labex:project/ $ mkdir test_dir
 labex:project/ $ ls
 test_dir
-labex:project/ $ touch example.txt ----------
+labex:project/ $ touch example.txt
 labex:project/ $ ls
 example.txt  test_dir
-labex:project/ $ mv example.txt _example.txt ---------
+labex:project/ $ mv example.txt _example.txt
 labex:project/ $ ls
 _example.txt  test_dir
 labex:project/ $  
 
 #MODULE 2
 
-labex:project/ $ cat /etc/passwd ------------
+labex:project/ $ cat /etc/passwd 
 root:x:0:0:root:/root:/bin/bash
 daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
 bin:x:2:2:bin:/bin:/usr/sbin/nologin
@@ -54,13 +54,13 @@ labex:x:5000:5000::/home/labex:/usr/bin/zsh
 mysql:x:113:122:MySQL Server,,,:/var/lib/mysql/:/bin/false
 mongodb:x:999:999::/home/mongodb:/bin/sh
 redis:x:114:123::/var/lib/redis:/usr/sbin/nologin
-labex:project/ $ head -n5 /etc/passwd ------------
+labex:project/ $ head -n5 /etc/passwd 
 root:x:0:0:root:/root:/bin/bash
 daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
 bin:x:2:2:bin:/bin:/usr/sbin/nologin
 sys:x:3:3:sys:/dev:/usr/sbin/nologin
 sync:x:4:65534:sync:/bin:/bin/sync
-labex:project/ $ tail -n5 /etc/passwd -----------
+labex:project/ $ tail -n5 /etc/passwd 
 pulse:x:112:119:PulseAudio daemon,,,:/run/pulse:/usr/sbin/nologin
 labex:x:5000:5000::/home/labex:/usr/bin/zsh
 mysql:x:113:122:MySQL Server,,,:/var/lib/mysql/:/bin/false
@@ -70,19 +70,41 @@ labex:project/ $
 
 #MODULE 3
 
-labex:project/ $ grep "root" /etc/passwd ------------
+labex:project/ $ grep "root" /etc/passwd 
 root:x:0:0:root:/root:/bin/bash
 labex:project/ $ 
 
 #MODULE 4
 
-labex:project/ $ zip -r test_dir.zip test_dir ----------
+labex:project/ $ zip -r test_dir.zip test_dir 
   adding: test_dir/ (stored 0%)
 labex:project/ $ unzip test_dir.zip -d unzipped_dir
 Archive:  test_dir.zip
    creating: unzipped_dir/test_dir/
 labex:project/ $ ls
-_example.txt  test_dir  test_dir.zip  unzipped_dir----------
+_example.txt  test_dir  test_dir.zip  unzipped_dir
 labex:project/ $ 
 
 #MODULE 5
+labex:project/ $ wget https://example.com/sample.txt 
+--2025-06-19 12:13:21--  https://example.com/sample.txt
+Resolving example.com (example.com)... 96.7.128.198, 96.7.128.175, 23.215.0.138, ...
+Connecting to example.com (example.com)|96.7.128.198|:443... 
+
+#MODULE 6
+
+labex:project/ $ touch secure.txt 
+labex:project/ $ chmod 444 secure.txt                                                                                   
+labex:project/ $ ls -al
+total 4
+drwxr-xr-x 1 labex labex   24 Jun 19 12:16 .
+drwxr-x--- 1 labex labex 4096 Jun 19 12:18 ..
+-r--r--r-- 1 labex labex    0 Jun 19 12:16 secure.txt
+labex:project/ $ 
+
+#MODULE 7
+
+labex:project/ $ export my_var='Hello, Linux!'
+labex:project/ $ echo $my_var
+Hello, Linux!
+
