@@ -108,3 +108,6 @@ labex:project/ $ export my_var='Hello, Linux!'
 labex:project/ $ echo $my_var
 Hello, Linux!
 
+(here we used single quote' instead of using double quote "
+because the shell treats ! as a special character so we used single to which prevent ! from being interpreted as a special character)
+
