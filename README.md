@@ -1,113 +1,31 @@
-# basic-command
-linux Assignment
+In basic command file !
 
-For a clearer version, see the code mode.
+1. Creating and Renaming Files/Directories
+Create a directory named test_dir using mkdir.
+Inside test_dir, create an empty file called example.txt.
+Rename example.txt to renamed_example.txt using mv
 
-#MODULE 1
+2. Viewing File Contents
+Use cat to display the contents of /etc/passwd.
+Display only the first 5 lines of /etc/passwd using head.
+Display only the last 5 lines of /etc/passwd using tail.
 
-labex:project/ $ mkdir test_dir
-labex:project/ $ ls
-test_dir
-labex:project/ $ touch example.txt
-labex:project/ $ ls
-example.txt  test_dir
-labex:project/ $ mv example.txt _example.txt
-labex:project/ $ ls
-_example.txt  test_dir
-labex:project/ $  
+3.Searching for Patterns
+Use grep to find all lines containing the word "root" in /etc/passwd.
 
-#MODULE 2
+4. Zipping and Unzipping
+Compress the test_dir directory into a file named test_dir.zip using zip.
+Unzip test_dir.zip into a new directory named unzipped_dir.
 
-labex:project/ $ cat /etc/passwd 
-root:x:0:0:root:/root:/bin/bash
-daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
-bin:x:2:2:bin:/bin:/usr/sbin/nologin
-sys:x:3:3:sys:/dev:/usr/sbin/nologin
-sync:x:4:65534:sync:/bin:/bin/sync
-games:x:5:60:games:/usr/games:/usr/sbin/nologin
-man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
-lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
-mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
-news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
-uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
-proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
-www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
-backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
-list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
-irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
-gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
-nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
-_apt:x:100:65534::/nonexistent:/usr/sbin/nologin
-systemd-network:x:101:102:systemd Network Management,,,:/run/systemd:/usr/sbin/nologin
-systemd-resolve:x:102:103:systemd Resolver,,,:/run/systemd:/usr/sbin/nologin
-messagebus:x:103:109::/nonexistent:/usr/sbin/nologin
-systemd-timesync:x:104:110:systemd Time Synchronization,,,:/run/systemd:/usr/sbin/nologin
-tcpdump:x:105:111::/nonexistent:/usr/sbin/nologin
-sshd:x:106:65534::/run/sshd:/usr/sbin/nologin
-usbmux:x:107:46:usbmux daemon,,,:/var/lib/usbmux:/usr/sbin/nologin
-rtkit:x:108:113:RealtimeKit,,,:/proc:/usr/sbin/nologin
-avahi:x:109:114:Avahi mDNS daemon,,,:/run/avahi-daemon:/usr/sbin/nologin
-saned:x:110:117::/var/lib/saned:/usr/sbin/nologin
-colord:x:111:118:colord colour management daemon,,,:/var/lib/colord:/usr/sbin/nologin
-pulse:x:112:119:PulseAudio daemon,,,:/run/pulse:/usr/sbin/nologin
-labex:x:5000:5000::/home/labex:/usr/bin/zsh
-mysql:x:113:122:MySQL Server,,,:/var/lib/mysql/:/bin/false
-mongodb:x:999:999::/home/mongodb:/bin/sh
-redis:x:114:123::/var/lib/redis:/usr/sbin/nologin
-labex:project/ $ head -n5 /etc/passwd 
-root:x:0:0:root:/root:/bin/bash
-daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
-bin:x:2:2:bin:/bin:/usr/sbin/nologin
-sys:x:3:3:sys:/dev:/usr/sbin/nologin
-sync:x:4:65534:sync:/bin:/bin/sync
-labex:project/ $ tail -n5 /etc/passwd 
-pulse:x:112:119:PulseAudio daemon,,,:/run/pulse:/usr/sbin/nologin
-labex:x:5000:5000::/home/labex:/usr/bin/zsh
-mysql:x:113:122:MySQL Server,,,:/var/lib/mysql/:/bin/false
-mongodb:x:999:999::/home/mongodb:/bin/sh
-redis:x:114:123::/var/lib/redis:/usr/sbin/nologin
-labex:project/ $ 
 
-#MODULE 3
+5. Downloading Files
+Use wget to download a file from a URL (e.g., https://example.com/sample.txt).
 
-labex:project/ $ grep "root" /etc/passwd 
-root:x:0:0:root:/root:/bin/bash
-labex:project/ $ 
+6. Changing Permissions
+Create a file named secure.txt and change its permissions to read-only for everyone using chmod.
 
-#MODULE 4
+7. Working with Environment Variables
+Use export to set a new environment variable called MY_VAR with the value "Hello, Linux!".
 
-labex:project/ $ zip -r test_dir.zip test_dir 
-  adding: test_dir/ (stored 0%)
-labex:project/ $ unzip test_dir.zip -d unzipped_dir
-Archive:  test_dir.zip
-   creating: unzipped_dir/test_dir/
-labex:project/ $ ls
-_example.txt  test_dir  test_dir.zip  unzipped_dir
-labex:project/ $ 
-
-#MODULE 5
-labex:project/ $ wget https://example.com/sample.txt 
---2025-06-19 12:13:21--  https://example.com/sample.txt
-Resolving example.com (example.com)... 96.7.128.198, 96.7.128.175, 23.215.0.138, ...
-Connecting to example.com (example.com)|96.7.128.198|:443... 
-
-#MODULE 6
-
-labex:project/ $ touch secure.txt 
-labex:project/ $ chmod 444 secure.txt                                                                                   
-labex:project/ $ ls -al
-total 4
-drwxr-xr-x 1 labex labex   24 Jun 19 12:16 .
-drwxr-x--- 1 labex labex 4096 Jun 19 12:18 ..
--r--r--r-- 1 labex labex    0 Jun 19 12:16 secure.txt
-labex:project/ $ 
-
-#MODULE 7
-
-labex:project/ $ export my_var='Hello, Linux!'
-labex:project/ $ echo $my_var
-Hello, Linux!
-
-(here we used single quote' instead of using double quote "
-because the shell treats ! as a special character so we used single to which prevent ! from being interpreted as a special character)
-
+if-else shell scripting .
+ A Bash script that simulates a lottery draw by generating a random number and comparing it to the user's guess.
