@@ -27,5 +27,5 @@ Create a file named secure.txt and change its permissions to read-only for every
 7. Working with Environment Variables
 Use export to set a new environment variable called MY_VAR with the value "Hello, Linux!".
 
-if-else shell scripting .
+lottery-checker
  A Bash script that simulates a lottery draw by generating a random number and comparing it to the user's guess.
