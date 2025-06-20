@@ -1,3 +1,5 @@
+For clear version ,see in code mode.
+
 In basic command file !
 
 1. Creating and Renaming Files/Directories
