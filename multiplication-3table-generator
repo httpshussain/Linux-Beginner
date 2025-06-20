@@ -1,3 +1,6 @@
+labex:project/ $vim forloop.sh
+#press i to edit the code and then press Esc and ;wq to save and move from shell to terminal
+
 #!/bin/sh
  #here we are creating the 3 table
     
