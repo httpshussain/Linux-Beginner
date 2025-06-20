@@ -1,0 +1,28 @@
+Lotter Number application in shell script !
+
+#!/bin/sh
+read userip
+   num = $((RANDOM%11))
+   if [ $userip -eq  $num  ] ;
+   then 
+       echo Congrations , You Won The Lotter !
+   else    
+      echo You lost the Lotter ,The actual Lotter Number is $num
+  fi  
+
+#This are the script writen in Shell or Bash,
+In terminal side to enter in script side we use the command of vim file_name by creating a new file.
+
+labex:project/ $ vim lotter.sh
+labex:project/ $ chmod 777 lotter.sh
+labex:project/ $ ls -al lotter.sh
+-rwxrwxrwx 1 labex labex 215 Jun 20 09:33 lotter.sh
+labex:project/ $ #now we got the permission to execute as a user!
+labex:project/ $ ./lotter.sh
+labex:project/ $ vim lotter.sh
+labex:project/ $ ./lotter.sh  
+8
+You lost the Lotter ,The actual Lotter Number is 10
+labex:project/ $ ./lotter.sh
+9
+Congrations , You Won The Lotter !
