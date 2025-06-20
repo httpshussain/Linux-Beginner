@@ -1,4 +1,4 @@
-Lotter Number application in shell script !
+A Bash script that simulates a lottery draw by generating a random number and comparing it to the user's guess.
 
 #!/bin/sh
 read userip
