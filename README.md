@@ -29,5 +29,8 @@ Create a file named secure.txt and change its permissions to read-only for every
 7. Working with Environment Variables
 Use export to set a new environment variable called MY_VAR with the value "Hello, Linux!".
 
-lottery-checker
+lottery-checker:
  A Bash script that simulates a lottery draw by generating a random number and comparing it to the user's guess.
+
+multiplication-3table-generator;
+A simple Bash script that generates clean multiplication tables (e.g., 3×1 to 3×10) with proper formatting. Perfect for Linux beginners learning loops and arithmetic operations!
