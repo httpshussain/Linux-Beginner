@@ -34,3 +34,11 @@ lottery-checker:
 
 multiplication-3table-generator;
 A simple Bash script that generates clean multiplication tables (e.g., 3×1 to 3×10) with proper formatting. Perfect for Linux beginners learning loops and arithmetic operations!
+
+voter_eligibility_check.sh
+Excited to share my new Bash script that automates voter eligibility checks! This simple yet powerful tool:
+
+✅ Validates age input (numbers only)
+✅ Instantly checks if a citizen is eligible to vote (18+ years)
+✅ Calculates & displays remaining years for underage users
+✅ Demonstrates real-world use of shell scripting for civic awareness
