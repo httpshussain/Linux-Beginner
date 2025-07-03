@@ -1,6 +1,10 @@
 Linux Avengers vs Thanos User Management Battle.
 
+
+#Act 1: The Threat
 Thanos is attacking our Linux system! If he snaps his fingers, half our users will vanish. We must assemble the Avengers—by creating their user accounts—to stop him.
+
+
 labex:project/ $ sudo adduser thanos
 Adding user `thanos' ...
 Adding new group `thanos' (1000) ...
@@ -59,4 +63,62 @@ mysql:x:113:122:MySQL Server,,,:/var/lib/mysql/:/bin/false
 mongodb:x:999:999::/home/mongodb:/bin/sh
 redis:x:114:123::/var/lib/redis:/usr/sbin/nologin
 thanos:x:1000:1000:,,,:/home/thanos:/bin/bash
+
+Act 2: Assembling the Team
+
+
+labex:project/ $ sudo useradd thor
+labex:project/ $ sudo useradd ironman 
+labex:project/ $ sudo passwd ironman
+New password: 
+Retype new password: 
+passwd: password updated successfully
+labex:project/ $ sudo userdel thor
+labex:project/ $ sudo adduser thor
+Adding user `thor' ...
+Adding new group `thor' (1001) ...
+Adding new user `thor' (1001) with group `thor' ...
+Creating home directory `/home/thor' ...
+Copying files from `/etc/skel' ...
+New password: 
+Retype new password: 
+passwd: password updated successfully
+Changing the user information for thor
+Enter the new value, or press ENTER for the default
+	Full Name []: 
+	Room Number []: 
+	Work Phone []: 
+	Home Phone []: 
+	Other []: 
+Is the information correct? [Y/n] y
+mysql:x:113:122:MySQL Server,,,:/var/lib/mysql/:/bin/false
+mongodb:x:999:999::/home/mongodb:/bin/sh
+redis:x:114:123::/var/lib/redis:/usr/sbin/nologin
+thanos:x:1000:1000:,,,:/home/thanos:/bin/bash
+ironman:x:5002:5003::/home/ironman:/bin/sh ---- #here ironman directory is sh,changing it to bash.
+thor:x:1001:1001:,,,:/home/thor:/bin/bash
+labex:project/ $ sudo usermod -s /bin/bash ironman ----
+labex:project/ $ tail -n5 /etc/passwd          
+mongodb:x:999:999::/home/mongodb:/bin/sh
+redis:x:114:123::/var/lib/redis:/usr/sbin/nologin
+thanos:x:1000:1000:,,,:/home/thanos:/bin/bash
+ironman:x:5002:5003::/home/ironman:/bin/bash
+thor:x:1001:1001:,,,:/home/thor:/bin/bash
+labex:project/ $ sudo useradd spiderman -m
+labex:project/ $ sudo useradd dr.strange -m
+labex:project/ $ sudo useradd hulk -m      
+labex:project/ $ sudo useradd captainamerica -m
+labex:project/ $ tail -n8 /etc/passwd
+redis:x:114:123::/var/lib/redis:/usr/sbin/nologin
+thanos:x:1000:1000:,,,:/home/thanos:/bin/bash
+ironman:x:5002:5003::/home/ironman:/bin/bash
+thor:x:1001:1001:,,,:/home/thor:/bin/bash
+spiderman:x:5003:5004::/home/spiderman:/bin/sh
+dr.strange:x:5004:5005::/home/dr.strange:/bin/sh
+hulk:x:5005:5006::/home/hulk:/bin/sh
+captainamerica:x:5006:5007::/home/captainamerica:/bin/sh
+
+
+Act 3: Thanos Strikes
+
 
