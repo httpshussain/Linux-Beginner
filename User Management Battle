@@ -119,6 +119,30 @@ hulk:x:5005:5006::/home/hulk:/bin/sh
 captainamerica:x:5006:5007::/home/captainamerica:/bin/sh
 
 
-Act 3: Thanos Strikes
+Act 3: Thanos Strikes(Thanos joins (sudo adduser thanos) and gets the Infinity Gauntlet (sudo powers) by editing /etc/sudoers)
+
+labex:project/ $ sudo visudo 
+# User privilege specification
+root    ALL=(ALL:ALL)  ALL
+thanos   ALL = ALL
+
+labex:project/ $ su - thanos
+Password: 
+thanos@6867cef61c0e35fea6e40805:~$ sudo useradd nabula -m
+[sudo] password for thanos:
+thanos@6867cef61c0e35fea6e40805:~$ tail -n8 /etc/passwd
+thanos:x:1000:1000:,,,:/home/thanos:/bin/bash
+thor:x:1001:1001:,,,:/home/thor:/bin/bash
+ironman:x:5001:5001::/home/ironman:/bin/bash
+spiderman:x:5002:5003::/home/spiderman:/bin/sh
+hulk:x:5003:5004::/home/hulk:/bin/sh
+dr.strange:x:5004:5005::/home/dr.strange:/bin/sh
+captainamerica:x:5005:5006::/home/captainamerica:/bin/sh
+nabula:x:5006:5007::/home/nabula:/bin/sh
+
+Act 4: The Counterattack (Avengers assemble!!!!)
+Now full of attacks let see.
+
+
 
 
