@@ -139,10 +139,108 @@ hulk:x:5003:5004::/home/hulk:/bin/sh
 dr.strange:x:5004:5005::/home/dr.strange:/bin/sh
 captainamerica:x:5005:5006::/home/captainamerica:/bin/sh
 nabula:x:5006:5007::/home/nabula:/bin/sh
+thanos@6868c3b71c0e35fea6e487e8:~$ sudo userdel spiderman
+[sudo] password for thanos: 
+thanos@6868c3b71c0e35fea6e487e8:~$ sudo userdel dr.strange
+thanos@6868c3b71c0e35fea6e487e8:~$ tail -n8 /etc/passwd
+mongodb:x:999:999::/home/mongodb:/bin/sh
+redis:x:114:123::/var/lib/redis:/usr/sbin/nologin
+thanos:x:1000:1000:,,,:/home/thanos:/bin/bash
+thor:x:1001:1001:,,,:/home/thor:/bin/bash
+ironman:x:5001:5001::/home/ironman:/bin/bash
+hulk:x:5003:5004::/home/hulk:/bin/sh
+captainamerica:x:5005:5006::/home/captainamerica:/bin/sh
+nabula:x:5007:5008::/home/nabula:/bin/sh
+
+
 
 Act 4: The Counterattack (Avengers assemble!!!!)
-Now full of attacks let see.
+Now full of actions let see.
 
 
+labex:project/ $ sudo groupadd infinity
+labex:project/ $ tail -n5 /etc/group
+hulk:x:5004:
+captainamerica:x:5006:
+dr.strange:x:5007:
+nabula:x:5008:
+infinity:x:5009
+labex:project/ $ sudo visudo
 
+# User privilege specification
+root    ALL=(ALL:ALL) ALL
+thanos ALL = ALL
+# Members of the admin group may gain root privileges
+%admin ALL=(ALL) ALL
 
+# Allow members of group sudo to execute any command
+%sudo   ALL=(ALL:ALL) ALL
+%infinity ALL = ALL NOPASSWD:ALL
+# See sudoers(5) for more information on "@include" directives:
+
+labex:project/ $ tail -n8 /etc/group
+redis:x:123:
+thanos:x:1000:
+thor:x:1001:
+ironman:x:5001:
+hulk:x:5004:
+captainamerica:x:5006:
+nabula:x:5008:
+infinity:x:5009:ironman
+labex:project/ $ sudo usermod -aG infinity thanos
+labex:project/ $ tail -n8 /etc/group             
+redis:x:123:
+thanos:x:1000:
+thor:x:1001:
+ironman:x:5001:
+hulk:x:5004:
+captainamerica:x:5006:
+nabula:x:5008:
+infinity:x:5009:ironman,thanos
+labex:project/ $ sudo gpasswd -d thanos infinity  #I AM IRONMAN !
+Removing user thanos from group infinity
+labex:project/ $ tail -n8 /etc/group            
+redis:x:123:
+thanos:x:1000:
+thor:x:1001:
+ironman:x:5001:
+hulk:x:5004:
+captainamerica:x:5006:
+nabula:x:5008:
+infinity:x:5009:ironman
+#Defeats Thanos: sudo userdel thanos.
+
+Act 5: Victory(Iron Man (su ironman) wields the Gauntlet (sudo))
+
+labex:project/ $ sudo su - ironman  
+ironman@6868c3b71c0e35fea6e487e8:~$ sudo useradd spiderman -m
+[sudo] password for ironman: 
+useradd: warning: the home directory /home/spiderman already exists.
+useradd: Not copying any file from skel directory into it.
+ironman@6868c3b71c0e35fea6e487e8:~$ sudo useradd dr.strange -m
+useradd: warning: the home directory /home/dr.strange already exists.
+useradd: Not copying any file from skel directory into it.
+ironman@6868c3b71c0e35fea6e487e8:~$ tail -n8 /etc/passwd
+thanos:x:1000:1000:,,,:/home/thanos:/bin/bash
+thor:x:1001:1001:,,,:/home/thor:/bin/bash
+ironman:x:5001:5001::/home/ironman:/bin/bash
+hulk:x:5003:5004::/home/hulk:/bin/sh
+captainamerica:x:5005:5006::/home/captainamerica:/bin/sh
+nabula:x:5007:5008::/home/nabula:/bin/sh
+spiderman:x:5008:5010::/home/spiderman:/bin/sh
+dr.strange:x:5009:5011::/home/dr.strange:/bin/sh
+
+Destroys the Gauntlet: sudo groupdel infinity_gauntlet—saving the Linux system!
+ironman@6868c3b71c0e35fea6e487e8:~$ sudo groupdel infinity
+ironman@6868c3b71c0e35fea6e487e8:~$ tail -n8 /etc/group
+thanos:x:1000:
+thor:x:1001:
+ironman:x:5001:
+hulk:x:5004:
+captainamerica:x:5006:
+nabula:x:5008:
+spiderman:x:5010:
+dr.strange:x:5011:
+
+With users managed, permissions secured,
+and Thanos gone, the Avengers (and you) master Linux user administration. Lesson: With great sudo power comes great responsibility!
